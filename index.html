@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Positioning Inventory</title>
+    <link rel="stylesheet" href="2310637.css">
+</head>
+<body>
+    <h1>QR Inventory Scanner</h1>
+    
+    <button id="btn">SCAN</button>
+    
+    <div id="camera"></div>
+    
+    <div id="mapContainer">
+        <img id="map" src="map.png" alt="Floor plan">
+        <div id="marker"></div>
+    </div>
+    
+    <p id="itemName" style="font-size: 1.5em; color: var(--theme);"></p>
+    <p id="itemStock" style="font-size: 1.2em;"></p>
+    <p id="itemPrice" style="font-size: 1.2em; color: green; font-weight: bold;"></p>
+
+    <!-- QR scanner library -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="2310637.js"></script>
+</body>
+</html>
