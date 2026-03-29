@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>qr_positioning </title>
-    <link rel="stylesheet" href="2310637.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Positioning</title>
+    <link rel="stylesheet" href="2310637.css" />
 </head>
 <body>
-    <h1>qr_positioning</h1>
-    
-    <button id="btn">SCAN</button>
-    
-    <div id="camera"></div>
-    
+    <h1>QR Positioning</h1>
     <div id="mapContainer">
-        <img id="map" src="map.png" alt="Floor plan">
+        <img src="map.png" id="map" alt="map" />
         <div id="marker"></div>
     </div>
-    
-    <p id="itemName" style="font-size: 1.5em; color: var(--theme);"></p>
-    <p id="itemStock" style="font-size: 1.2em;"></p>
-    <p id="itemPrice" style="font-size: 1.2em; color: green; font-weight: bold;"></p>
+    <button id="btn" onclick="toggleScanner()">SCAN</button>
 
-    <!-- QR scanner library -->
-    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <div id="camera"></div>
+
+    <div id="inventory">
+        <p id="inv-name"></p>
+        <p id="inv-stock"></p>
+        <p id="inv-price"></p>
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script src="2310637.js"></script>
 </body>
 </html>
