@@ -27,7 +27,7 @@ function startScanner() {
             showMarkerAt(place.top, place.left);
             
             document.getElementById("itemName").innerText = "Name: " + place.name;
-            document.getElementById("itemStock").innerText = "In store: " + (place.in_store ? "yes" : "no");
+            document.getElementById("itemStock").innerText = "In store: " + (place.inStock ? "yes" : "no");
             document.getElementById("itemPrice").innerText = "Price: €" + place.price;
             
             toggleScanner();
