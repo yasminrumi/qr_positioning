@@ -1,10 +1,6 @@
 const reader = new Html5Qrcode("camera");
 let scannerOn = false;
 
-const btn = document.getElementById("btn");
-const mapContainer = document.getElementById("mapContainer");
-const marker = document.getElementById("marker");
-
 function toggleScanner() {
     scannerOn = !scannerOn;
     if (scannerOn) {
@@ -25,16 +21,12 @@ function startScanner() {
         function (text) {
             const place = JSON.parse(text);
             showMarkerAt(place.top, place.left);
-            
-            document.getElementById("itemName").innerText = "Name: " + place.name;
-            document.getElementById("itemStock").innerText = "In store: " + (place.inStock ? "yes" : "no");
-            document.getElementById("itemPrice").innerText = "Price: €" + place.price;
-            
+            showInventory(place);
             toggleScanner();
         }
     ).catch(function (err) {
         console.error(err);
-    });  
+    });
 }
 
 function stopScanner() {
@@ -46,4 +38,15 @@ function showMarkerAt(top, left) {
     marker.style.left = left;
 }
 
-btn.onclick = toggleScanner;
+function showInventory(data) {
+    const inventory = document.getElementById("inventory");
+    const nameEl    = document.getElementById("inv-name");
+    const stockEl   = document.getElementById("inv-stock");
+    const priceEl   = document.getElementById("inv-price");
+
+    nameEl.innerText  = "Name: " + data.name;
+    stockEl.innerText = "In store: " + (data.inStock ? "Yes" : "No");
+    priceEl.innerText = "Price: €" + data.price;
+
+    inventory.style.display = "flex";
+}
